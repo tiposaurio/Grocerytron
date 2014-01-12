@@ -19,9 +19,15 @@ namespace Grocerytron
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(
+                name: "ItemsRoute",
+                routeTemplate: "api/lists/{listid}/items/{id}",
+                defaults: new { controller = "items", id = RouteParameter.Optional }
+            );
+
+            config.Routes.MapHttpRoute(
                 name: "DefaultApi",
-                routeTemplate: "api/{controller}/{id}",
-                defaults: new { id = RouteParameter.Optional }
+                routeTemplate: "api/lists/{id}",
+                defaults: new { controller = "lists" ,id = RouteParameter.Optional }
             );
         }
     }

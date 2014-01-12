@@ -21,5 +21,38 @@ namespace Grocerytron.Models
         {
             return _ctx.Items.Where(r => r.ListId == listId);
         }
+
+
+        public bool Save()
+        {
+            try {
+                return _ctx.SaveChanges() > 0;
+            }
+            catch (Exception ex)
+            {
+                //TODO Log this error
+                return false;
+            }
+            
+        }
+
+        public bool AddList(List newList)
+        {
+            try
+            {
+                _ctx.Lists.Add(newList);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
+
+        public IQueryable<List> GetListsIncludingItems()
+        {
+           return _ctx.Lists.Include("Items");
+        }
     }
 }

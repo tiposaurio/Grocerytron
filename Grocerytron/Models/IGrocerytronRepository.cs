@@ -9,6 +9,11 @@ namespace Grocerytron.Models
     public interface IGrocerytronRepository
     {
         IQueryable<List> GetLists();
+        IQueryable<List> GetListsIncludingItems();
         IQueryable<Item> GetItemsByList(int listId);
+
+        bool Save();
+
+        bool AddList(List newList);
     }
 }

@@ -20,5 +20,14 @@ namespace Grocerytron.Controllers
         {
             return _repo.GetLists();
         }
+
+        public HttpResponseMessage Post([FromBody]List newList)
+        {
+            if (_repo.AddList(newList) && _repo.Save())
+            {
+                return Request.CreateResponse(HttpStatusCode.Created, newList);
+            }
+            return Request.CreateResponse(HttpStatusCode.BadRequest);
+        }
     }
 }

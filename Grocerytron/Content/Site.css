@@ -40,3 +40,11 @@ input[type="checkbox"].input-validation-error {
 .validation-summary-valid {
     display: none;
 }
+
+body {
+	padding-top:60px;
+}
+
+@media only screen and (max-width: 979px) {
+    body {padding-top:0;}
+}

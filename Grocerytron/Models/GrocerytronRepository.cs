@@ -25,7 +25,8 @@ namespace Grocerytron.Models
 
         public bool Save()
         {
-            try {
+            try
+            {
                 return _ctx.SaveChanges() > 0;
             }
             catch (Exception ex)
@@ -33,7 +34,7 @@ namespace Grocerytron.Models
                 //TODO Log this error
                 return false;
             }
-            
+
         }
 
         public bool AddList(List newList)
@@ -52,7 +53,21 @@ namespace Grocerytron.Models
 
         public IQueryable<List> GetListsIncludingItems()
         {
-           return _ctx.Lists.Include("Items");
+            return _ctx.Lists.Include("Items");
+        }
+
+
+        public bool AddItem(Item newItem)
+        {
+            try
+            {
+                _ctx.Items.Add(newItem);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            };
         }
     }
 }

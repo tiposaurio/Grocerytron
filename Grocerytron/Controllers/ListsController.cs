@@ -16,9 +16,20 @@ namespace Grocerytron.Controllers
             _repo = repo;
         }
 
-        public IEnumerable<List> Get()
+        public IEnumerable<List> Get(bool includeItems = false)
         {
-            return _repo.GetLists();
+            IQueryable<List> results;
+
+            if (includeItems == true)
+            {
+                results = _repo.GetListsIncludingItems();
+            }
+            else
+            {
+                results = _repo.GetLists();
+            }
+
+            return results;
         }
 
         public HttpResponseMessage Post([FromBody]List newList)

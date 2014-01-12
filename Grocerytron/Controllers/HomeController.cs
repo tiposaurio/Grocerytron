@@ -19,9 +19,7 @@ namespace Grocerytron.Controllers
         {
             ViewBag.Title = "Home Page";
 
-            var lists = _repo.GetListsIncludingItems().ToList();
-
-            return View(lists);
+            return View();
         }
     }
 }

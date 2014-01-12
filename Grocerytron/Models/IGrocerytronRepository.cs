@@ -15,5 +15,6 @@ namespace Grocerytron.Models
         bool Save();
 
         bool AddList(List newList);
+        bool AddItem(Item newItem);
     }
 }

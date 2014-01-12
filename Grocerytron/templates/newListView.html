@@ -1,0 +1,25 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="span12">
+            <h1>New List</h1>
+            <div class="well">
+                <form role="form" ng-submit="save()">
+                    <div class="form-group">
+                        <label for="inputTitle">Title:</label>
+                        <input type="text" class="form-control" id="inputTitle" placeholder="Title" name="inputTitle" ng-model="newList.title"/>
+                    </div>
+                    <div class="form-group">
+                        <div class="controls">
+                            <a href="/" class="btn btn-large">
+                                Cancel
+                            </a>
+                            <button class="btn btn-large btn-primary" type="submit">
+                                Save Changes <i class="icon-check icon-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

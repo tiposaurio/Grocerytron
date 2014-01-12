@@ -1,3 +1,3 @@
 ﻿'use strict';
 
-var grocerytronApp = angular.module('grocerytronApp', []);
+var grocerytronApp = angular.module('grocerytronApp', ['ngRoute']);

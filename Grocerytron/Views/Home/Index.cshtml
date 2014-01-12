@@ -3,27 +3,12 @@
     ViewBag.Title = "Home Page";
 }
 @section Scripts {
+    <script src="~/js/services/DataService.js"></script>
     <script src="~/js/controllers/ListController.js"></script>
+    <script src="~/js/controllers/NewListController.js"></script>
+    <script src="~/js/controllers/singleListController.js"></script>
 }
 
-<div ng-controller="ListController">
-    <div class="container lists">
-        <div class="row">
-            <div class="col-md-12 clearfix lists-header">
-                <h1 class="pull-left">Your Lists</h1>
-                <a href="/edit.html" class="btn btn-primary pull-right btn-new-list">New List</a>
-            </div>
-            <div class="progress progress-striped active" ng-show="isBusy">
-                <div class="progress-bar progress-bar-info" style="width:100%"></div>
-            </div> 
-        </div>
-        <div class="row" ng-repeat="list in data">
-            <div class="col-md-4 list-container">
-                <div class="well">
-                    <h2><a href="edit.html">{{ list.title }}</a> <i class="icon-trash list-delete" title="Click to delete list"></i></h2>
-                    <span class="item-count">Items: {{ list.items.length }}</span>
-                </div>
-            </div>
-        </div>
-    </div>
+<div ng-view="">
+
 </div>

@@ -176,6 +176,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="js\app.js" />
+    <Content Include="js\controllers\NewListController.js" />
+    <Content Include="js\controllers\singleListController.js" />
+    <Content Include="js\services\DataService.js" />
     <Content Include="Scripts\angular-animate.js" />
     <Content Include="Scripts\angular-animate.min.js" />
     <Content Include="Scripts\angular-cookies.js" />
@@ -469,6 +472,9 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="templates\listView.html" />
+    <Content Include="templates\newListView.html" />
+    <Content Include="templates\singleListView.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

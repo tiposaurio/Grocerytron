@@ -10,8 +10,8 @@
             </div>
         </div>
 
-        <div class="row" ng-repeat="list in data.lists">
-            <div class="col-md-4 list-container">
+        <div class="row">
+            <div class="col-md-4 list-container" ng-repeat="list in data.lists">
                 <div class="well">
                     <h2><a ng-href="#/list/{{ list.id }}">{{ list.title }}</a> <i class="icon-trash list-delete" title="Click to delete list"></i></h2>
                     <span class="item-count">Items: {{ list.items.length }}</span>

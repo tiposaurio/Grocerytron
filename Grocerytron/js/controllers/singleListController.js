@@ -2,6 +2,7 @@
     function ListController($scope, $window, $routeParams, dataService) {
         $scope.list = null;
         $scope.newItem = {};
+        $scope.isBusy = true;
 
         dataService.getListById($routeParams.id)
         .then(function (list) {
@@ -11,6 +12,9 @@
         function () {
             //error
             $window.location = "#/";
+        })
+        .then(function () {
+            $scope.isBusy = false;
         });
 
         $scope.addItem = function () {

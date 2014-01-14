@@ -1,16 +1,21 @@
 ﻿<div class="container">
     <div class="row">
         <div class="span12">
+            <div class="progress progress-striped active" ng-show="isBusy">
+                <div class="progress-bar progress-bar-info" style="width:100%"></div>
+            </div>
             <h1>{{ list.title }}</h1>
             <div class="well">
                 <h2>Items:</h2>
                 <div class="row">
-                    <ol ng-repeat="item in list.items">{{item.name}}</ol>
+                    <ol>
+                        <li ng-repeat="item in list.items">{{item.name}}</li>
+                    </ol>
                 </div>
-                <form class="form-inline" role="form" ng-submit="addItem()">
+                <form class="form-horizontal" role="form" ng-submit="addItem()">
                     <div class="form-group">
                         <label class="sr-only" for="inputItemName">Add New Item</label>
-                        <div class="col-sm-10">
+                        <div class="col-sm-2">
                             <input type="text" class="form-control" id="inputItemName" placeholder="Add a new item" ng-model="newItem.name" />
                         </div>
                         <button type="submit" class="btn btn-default">Add Item</button>
